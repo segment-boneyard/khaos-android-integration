@@ -80,7 +80,7 @@ class {{pascalcase basename}}Integration extends AbstractIntegration<Void> {
   @Override void alias(AliasPayload alias) {
     // todo: call integration's alias method
   }
-  {{/alias}}}
+  {{/alias}}
 
   {{#screen}}
   @Override void screen(ScreenPayload screen) {
