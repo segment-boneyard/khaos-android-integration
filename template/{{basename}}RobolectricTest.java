@@ -20,8 +20,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.mock;
+
+{{#staticClass}}
 import static org.powermock.api.mockito.PowerMockito.verifyNoMoreInteractions;
 import static org.powermock.api.mockito.PowerMockito.verifyStatic;
+{{/staticClass}}
 
 @RunWith(RobolectricTestRunner.class) @Config(emulateSdk = 18, manifest = Config.NONE)
 {{#staticClass}}
@@ -47,7 +50,7 @@ public class {{pascalcase basename}}RobolectricTest extends AbstractIntegrationT
     {{#staticClass}}
     verifyStatic();
     {{/staticClass}}
-    // TODO: verify that the integration is initialized correcly
+    // TODO: verify the integration was initialized with the right arguments
   }
 
   @Test @Override public void activityCreate() {
@@ -57,7 +60,11 @@ public class {{pascalcase basename}}RobolectricTest extends AbstractIntegrationT
     {{#staticClass}}
     verifyStatic();
     {{/staticClass}}
-    // TODO: verify that Integration’s SDK was called
+    {{#activityCreate}}
+    // TODO: verify that the onActivityCreated method of the integration was called
+    {{else}}
+    // TODO: verify that there were no interactions with the integration
+    {{/activityCreate}}
   }
 
   @Test @Override public void activityStart() {
@@ -66,7 +73,11 @@ public class {{pascalcase basename}}RobolectricTest extends AbstractIntegrationT
     {{#staticClass}}
     verifyStatic();
     {{/staticClass}}
-    // TODO: verify that Integration’s SDK was called
+    {{#activityStart}}
+    // TODO: verify that the onActivityStarted method of the integration was called
+    {{else}}
+    // TODO: verify that there were no interactions with the integration
+    {{/activityStart}}
   }
 
   @Test @Override public void activityResume() {
@@ -75,7 +86,11 @@ public class {{pascalcase basename}}RobolectricTest extends AbstractIntegrationT
     {{#staticClass}}
     verifyStatic();
     {{/staticClass}}
-    // TODO: verify that Integration’s SDK was called
+    {{#activityResume}}
+    // TODO: verify that the onActivityResumed method of the integration was called
+    {{else}}
+    // TODO: verify that there were no interactions with the integration
+    {{/activityResume}}
   }
 
   @Test @Override public void activityPause() {
@@ -84,7 +99,11 @@ public class {{pascalcase basename}}RobolectricTest extends AbstractIntegrationT
     {{#staticClass}}
     verifyStatic();
     {{/staticClass}}
-    // TODO: verify that Integration’s SDK was called
+    {{#activityPause}}
+    // TODO: verify that the onActivityPaused method of the integration was called
+    {{else}}
+    // TODO: verify that there were no interactions with the integration
+    {{/activityPause}}
   }
 
   @Test @Override public void activityStop() {
@@ -93,7 +112,11 @@ public class {{pascalcase basename}}RobolectricTest extends AbstractIntegrationT
     {{#staticClass}}
     verifyStatic();
     {{/staticClass}}
-    // TODO: verify that Integration’s SDK was called
+    {{#activityStop}}
+    // TODO: verify that the onActivityStopped method of the integration was called
+    {{else}}
+    // TODO: verify that there were no interactions with the integration
+    {{/activityStop}}
   }
 
   @Test @Override public void activitySaveInstance() {
@@ -103,7 +126,11 @@ public class {{pascalcase basename}}RobolectricTest extends AbstractIntegrationT
     {{#staticClass}}
     verifyStatic();
     {{/staticClass}}
-    // TODO: verify that Integration’s SDK was called
+    {{#activitySaveInstance}}
+    // TODO: verify that the onActivitySaveInstanceState method of the integration was called
+    {{else}}
+    // TODO: verify that there were no interactions with the integration
+    {{/activitySaveInstance}}
   }
 
   @Test @Override public void activityDestroy() {
@@ -112,7 +139,11 @@ public class {{pascalcase basename}}RobolectricTest extends AbstractIntegrationT
     {{#staticClass}}
     verifyStatic();
     {{/staticClass}}
-    // TODO: verify that Integration’s SDK was called
+    {{#activityDestroy}}
+    // TODO: verify that the onActivityDestroyed method of the integration was called
+    {{else}}
+    // TODO: verify that there were no interactions with the integration
+    {{/activityDestroy}}
   }
 
   @Test @Override public void track() {
@@ -120,7 +151,11 @@ public class {{pascalcase basename}}RobolectricTest extends AbstractIntegrationT
     {{#staticClass}}
     verifyStatic();
     {{/staticClass}}
-    // TODO: verify that Integration’s SDK was called
+    {{#track}}
+    // TODO: verify that the track method of the integration was called
+    {{else}}
+    // TODO: verify that there were no interactions with the integration
+    {{/track}}
   }
 
   @Test @Override public void alias() {
@@ -128,7 +163,11 @@ public class {{pascalcase basename}}RobolectricTest extends AbstractIntegrationT
     {{#staticClass}}
     verifyStatic();
     {{/staticClass}}
-    // TODO: verify that Integration’s SDK was called
+    {{#alias}}
+    // TODO: verify that the alias method of the integration was called
+    {{else}}
+    // TODO: verify that there were no interactions with the integration
+    {{/alias}}
   }
 
   @Test @Override public void identify() {
@@ -136,7 +175,11 @@ public class {{pascalcase basename}}RobolectricTest extends AbstractIntegrationT
     {{#staticClass}}
     verifyStatic();
     {{/staticClass}}
-    // TODO: verify that Integration’s SDK was called
+    {{#identify}}
+    // TODO: verify that the identify method of the integration was called
+    {{else}}
+    // TODO: verify that there were no interactions with the integration
+    {{/identify}}
   }
 
   @Test @Override public void group() {
@@ -144,7 +187,11 @@ public class {{pascalcase basename}}RobolectricTest extends AbstractIntegrationT
     {{#staticClass}}
     verifyStatic();
     {{/staticClass}}
-    // TODO: verify that Integration’s SDK was called
+    {{#group}}
+    // TODO: verify that the group method of the integration was called
+    {{else}}
+    // TODO: verify that there were no interactions with the integration
+    {{/group}}
   }
 
   @Test @Override public void screen() {
@@ -152,7 +199,11 @@ public class {{pascalcase basename}}RobolectricTest extends AbstractIntegrationT
     {{#staticClass}}
     verifyStatic();
     {{/staticClass}}
-    // TODO: verify that Integration’s SDK was called
+    {{#screen}}
+    // TODO: verify that the screen method of the integration was called
+    {{else}}
+    // TODO: verify that there were no interactions with the integration
+    {{/screen}}
   }
 
   @Test @Override public void flush() {
@@ -160,6 +211,10 @@ public class {{pascalcase basename}}RobolectricTest extends AbstractIntegrationT
     {{#staticClass}}
     verifyStatic();
     {{/staticClass}}
-    // TODO: verify that Integration’s SDK was called
+    {{#flush}}
+    // TODO: verify that the flush method of the integration was called
+    {{else}}
+    // TODO: verify that there were no interactions with the integration
+    {{/flush}}
   }
 }
