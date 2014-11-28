@@ -13,9 +13,18 @@ import org.powermock.modules.junit4.rule.PowerMockRule;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
+{{#identify}}
 import static com.segment.analytics.TestUtils.IdentifyPayloadBuilder;
+{{/identify}}
+{{#screen}}
 import static com.segment.analytics.TestUtils.ScreenPayloadBuilder;
+{{/screen}}
+{{#track}}
 import static com.segment.analytics.TestUtils.TrackPayloadBuilder;
+{{/track}}
+{{#group}}
+import static com.segment.analytics.TestUtils.GroupPayloadBuilder;
+{{/group}}
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.eq;
@@ -159,7 +168,7 @@ public class {{pascalcase basename}}RobolectricTest extends AbstractIntegrationT
   }
 
   @Test @Override public void alias() {
-    integration.flush(new FlushPayloadBuilder().build());
+    integration.flush();
     {{#staticClass}}
     verifyStatic();
     {{/staticClass}}
