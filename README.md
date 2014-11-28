@@ -11,10 +11,10 @@
     $ cd lib/
     $ khaos segmentio/khaos-android-integration Mixpanel
 
-This will create a folder Mixpanel, with the files `MixpanelIntegration.java` and `MixpanelRobolectricTest.java`. Copy the first file [here](https://github.com/segmentio/analytics-android/tree/master/core/src/main/java/com/segment/analytics) and the second (the test file) [here](https://github.com/segmentio/analytics-android/tree/master/core/src/androidTest/java/com/segment/analytics).
+This will create a folder Mixpanel, with the files `MixpanelIntegration.java` and `MixpanelRobolectricTest.java`. Copy the first file [into the source directory](https://github.com/segmentio/analytics-android/tree/master/core/src/main/java/com/segment/analytics) and the second (the test file) [into the test directory](https://github.com/segmentio/analytics-android/tree/master/core/src/androidTest/java/com/segment/analytics).
 
-Declare the dependency for the integration SDK [here](https://github.com/segmentio/analytics-android/blob/master/build.gradle#L40). If it's a JAR, you'll have to copy the JAR into the [libs folder](https://github.com/segmentio/analytics-android/tree/master/libs). Make sure you add the version number to the JAR so we can see what version of the integration we're using.
-Once you've added the dependency, you can add it to the projects [core](https://github.com/segmentio/analytics-android/blob/master/core/build.gradle#L12) and [all](https://github.com/segmentio/analytics-android/blob/master/all/build.gradle#L6).
+Declare the dependency for the integration SDK [in the root build.gradle file](https://github.com/segmentio/analytics-android/blob/master/build.gradle#L40). If it's a JAR, you'll have to copy the JAR into the [libs folder](https://github.com/segmentio/analytics-android/tree/master/libs). Make sure you add the version number to the JAR so we can see what version of the integration we're using.
+Once you've added the dependency, you'll have to add it to the [core module](https://github.com/segmentio/analytics-android/blob/master/core/build.gradle#L12) and the [all module](https://github.com/segmentio/analytics-android/blob/master/all/build.gradle#L6).
 
 Run `./gradlew clean build` verify everything is setup correctly!
 
