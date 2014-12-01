@@ -1,5 +1,5 @@
 
-# khaos-andoird-integration
+# khaos-android-integration
 
   A [khaos][khaos] template for creating new Android integrations.
 
